@@ -1,6 +1,6 @@
-#### Install depot_tools
+### Install depot_tools
 
-### Clone the depot_tools repository:
+#### Clone the depot_tools repository:
 
 $ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
@@ -78,15 +78,15 @@ cd -
 In addition to the server's certificate and public key, this script will also generate a CA certificate (net/tools/quic/certs/out/2048-sha256-root.pem) which you will need to add to your OS's root certificate store in order for it to be trusted during certificate validate. For doing this on linux, please see these instructions.
 
 
-#### Run the QUIC server and client
-### Run the quic_server:
+### Run the QUIC server and client
+#### Run the quic_server:
 
 ./out/Debug/quic_server \
   --quic_response_cache_dir=/tmp/quic-data/www.example.org \
   --certificate_file=net/tools/quic/certs/out/leaf_cert.pem \
   --key_file=net/tools/quic/certs/out/leaf_cert.pkcs8
 
-### And you should be able to successfully request the file over QUIC using quic_client:
+#### And you should be able to successfully request the file over QUIC using quic_client:
 
 ./out/Debug/quic_client --host=127.0.0.1 --port=6121 https://www.example.org/
 
