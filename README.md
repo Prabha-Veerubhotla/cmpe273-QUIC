@@ -18,3 +18,11 @@ QUIC is an experimental transport layer network protocol initially designed, imp
 QUIC's main goal is to improve perceived performance of connection-oriented web applications that are currently using TCP. It does this by establishing a number of multiplexed connections between two endpoints over User Datagram Protocol (UDP).
 
 ### Individual Contributions: 
+
+#### Vijaya Lakshmi Prabha Veerubhotla:
+
+#### Caroline Chandraguptharajah:
+
+#### Akshay Anil Pagar:
+
+#### Dhruvil Jiteshbhai Patel:
