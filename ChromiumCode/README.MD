@@ -1,3 +1,7 @@
+The Source Code for this project is used from Chromium's GQUIC Github repository. Please follow below instructions to use QUIC. 
+
+Link to github Repository: https://chromium.googlesource.com/chromium/tools/depot_tools/
+
 ### Install depot_tools
 
 #### Clone the depot_tools repository:
