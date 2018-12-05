@@ -2,7 +2,7 @@
 
 #### Clone the depot_tools repository:
 
-$ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+$ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git or download source from this repository. 
 
 Add depot_tools to the end of your PATH (you will probably want to put this in your ~/.bashrc or ~/.zshrc). Assuming you cloned depot_tools to /path/to/depot_tools:
 
@@ -81,14 +81,11 @@ In addition to the server's certificate and public key, this script will also ge
 ### Run the QUIC server and client
 #### Run the quic_server:
 
-./out/Debug/quic_server \
-  --quic_response_cache_dir=/tmp/quic-data/www.example.org \
-  --certificate_file=net/tools/quic/certs/out/leaf_cert.pem \
-  --key_file=net/tools/quic/certs/out/leaf_cert.pkcs8
+./out/Default/quic_server --quic_response_cache_dir=/home/akshay/tmp/quic-data/www.example.org --certificate_file=net/tools/quic/certs/out/leaf_cert.pem --key_file=net/tools/quic/certs/out/leaf_cert.pkcs8
 
 #### And you should be able to successfully request the file over QUIC using quic_client:
 
-./out/Debug/quic_client --host=127.0.0.1 --port=6121 https://www.example.org/
+./out/Default/quic_client --host=127.0.0.1 --port=6121 https://www.example.org/
 
 Note that if you let the server's port default to 6121, you must specify the client port because it defaults to 80.
 Moreover, if your local machine has multiple loopback addresses (as it would if using both IPv4 and IPv6), you have to pick a specific address.
@@ -98,12 +95,7 @@ note: both the client and server are meant mainly for integration testing: neith
 
 To test the same download using chrome, 
 
-chrome \
-  --user-data-dir=/tmp/chrome-profile \
-  --no-proxy-server \
-  --enable-quic \
-  --origin-to-force-quic-on=www.example.org:443 \
-  --host-resolver-rules='MAP www.example.org:443 127.0.0.1:6121' \
-  https://www.example.org
+chrome --user-data-dir=/tmp/chrome-profile --no-proxy-server --enable-quic --origin-to-force-quic-on=www.example.org:443 --host-resolver-rules='MAP www.example.org:443 127.0.0.1:6121' https://www.example.org
+
 
 
